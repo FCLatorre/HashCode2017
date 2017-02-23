@@ -9,14 +9,18 @@ namespace HashCode2017.DataStructures
     class Request
     {
         //constructor
-        public Request(int id, int idv, int vidw)
+        public Request(int requestID, int videoID, int videoSize, int numRequest)
         {
-            data[0] = id;
-            data[1] = idv;
-            data[2] = vidw;
-
+            requestID = requestID;
+            videoID = videoID;
+            videoSize = videoSize;
+            priority = numRequest * videoSize;
         }
         //atributes
-        public int[] data = new int[3];
+        public int requestID;
+        public int videoID;
+        public int videoSize;
+        public int numRequest;
+        public int priority; //numRequest*videoSize
     }
 }

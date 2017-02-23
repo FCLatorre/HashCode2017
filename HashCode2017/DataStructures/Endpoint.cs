@@ -13,11 +13,14 @@ namespace HashCode2017.DataStructures
         {
             latency = l;
 
-            cache = new int[cch][];
+            cache = new List<Cache>();
+
+            request = new List<Request>();
         }
 
         //atributes
         public int latency;
-        public int[][] cache; //2colums
+        public List<Cache> cache;
+        public List<Request> request;
     }
 }

@@ -1,5 +1,4 @@
 ﻿using System;
-using HashCode2017.DataStructures;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -15,32 +14,6 @@ namespace HashCode2017
             string input = System.IO.File.ReadAllText(@"..\..\Input\me_at_the_zoo.in");
 
             string[] inputV = input.Split(new string[] { "\n" }, StringSplitOptions.RemoveEmptyEntries);
-
-            //Leer del fichero y crear las estructuras
-
-
-
-            //Recorrer los endpoints y asignar videos a caches
-            for(int i=0; i < endpoints.length; i++)
-            {
-                //Ordenar los request del usuario por campo prioridad
-
-                //Ordenar las caches del usuario
-
-                //para cada endpoint resolvemos los videos con las caches
-                for (int j=0; j < endpoint.request; j++)
-                {
-                    for(int z=0; z<endpoint.caches; z++)
-                    {
-                        if (cache.espaciodisponiblwe > espacioVideo)
-                        {
-
-                        }
-                    }
-                }
-            }
-
-
 
             //Final: Escribir al fichero
             /*
