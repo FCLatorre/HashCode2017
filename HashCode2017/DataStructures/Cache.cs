@@ -21,6 +21,7 @@ namespace HashCode2017.DataStructures
         public int cacheID;
         public List<Endpoint> endp;
         public List<Video> videos;
+        public int[][] endpoints;
 
     }
 }

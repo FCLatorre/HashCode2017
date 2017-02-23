@@ -15,6 +15,8 @@ namespace HashCode2017.DataStructures
             videoID = videoID;
             videoSize = videoSize;
             numRequest = numRequest;
+            //Este calculo es clave para mejorar la puntuacion
+            priority = numRequest - videoSize;
         }
         //atributes
         public int requestID;
