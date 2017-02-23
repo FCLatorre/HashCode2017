@@ -14,7 +14,7 @@ namespace HashCode2017.DataStructures
             requestID = requestID;
             videoID = videoID;
             videoSize = videoSize;
-            priority = numRequest * videoSize;
+            numRequest = numRequest;
         }
         //atributes
         public int requestID;
