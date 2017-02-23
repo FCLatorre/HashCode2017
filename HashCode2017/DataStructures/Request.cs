@@ -11,10 +11,10 @@ namespace HashCode2017.DataStructures
         //constructor
         public Request(int requestID, int videoID, int videoSize, int numRequest)
         {
-            requestID = requestID;
-            videoID = videoID;
-            videoSize = videoSize;
-            numRequest = numRequest;
+            this.requestID = requestID;
+            this.videoID = videoID;
+            this.videoSize = videoSize;
+            this.numRequest = numRequest;
             //Este calculo es clave para mejorar la puntuacion
             priority = numRequest - videoSize;
         }

@@ -47,11 +47,15 @@ namespace HashCode2017
                 contador = contador + numCaches;
             }
             int totalRequests = Int32.Parse(auxiliar[2]);
-            contador++; ///!!!!!
             for(int i=0; i < totalRequests; i++)
             {
                 string[] request = inputV[contador+i].Split(new char[0], StringSplitOptions.RemoveEmptyEntries);
+                Endpoint client = endpoints.ElementAt(Int32.Parse(request[1]));
+                int videoID = Int32.Parse(request[0]);
+                Request newRequest = new Request(client.request.Count() + 1, videoID, videos.ElementAt(videoID).size, Int32.Parse(request[2]));
+                client.request.Add(newRequest);
             }
+
             int totalCaches = Int32.Parse(auxiliar[3]);
             int cacheSize = Int32.Parse(auxiliar[4]);
 

@@ -10,12 +10,12 @@ namespace HashCode2017.DataStructures
     {
         public Video(int id, int size)
         {
-            id = id;
-            size = size;
+            this.id = id;
+            this.size = size;
         }
 
         //atributes
-        public double size;         //in megabytes
+        public int size;         //in megabytes
         public int[][] requests;
         public int id;
     }
