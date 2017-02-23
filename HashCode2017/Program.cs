@@ -30,16 +30,28 @@ namespace HashCode2017
             int numEndpoints = Int32.Parse(auxiliar[1]);
             List<Endpoint> endpoints = new List<Endpoint>();
 
-            string[] endpointData = inputV[2].Split(new char[0], StringSplitOptions.RemoveEmptyEntries);
+            int contador = 2;
             for (int i = 0; i < numEndpoints; i++)
             {
-                string[] endpointAttributes= inputV[3].Split(new char[0], StringSplitOptions.RemoveEmptyEntries);
-                for(int j=0; j< Int32.Parse(endpointAttributes[1]))
+                string[] endpointData = inputV[contador].Split(new char[0], StringSplitOptions.RemoveEmptyEntries);
+                contador++;
+                string[] endpointAttributes= inputV[contador].Split(new char[0], StringSplitOptions.RemoveEmptyEntries);
+                Endpoint client = new Endpoint(i, Int32.Parse(endpointData[0]));
+                int numCaches = Int32.Parse(endpointData[1]);
+                for (int j=0; j< numCaches; j++)
                 {
-
+                    string[] cacheData = inputV[contador+j+1].Split(new char[0], StringSplitOptions.RemoveEmptyEntries);
+                    client.cache.Add(new Cache(Int32.Parse(cacheData[0]), Int32.Parse(cacheData[1])));
                 }
+                endpoints.Add(client);
+                contador = contador + numCaches;
             }
             int totalRequests = Int32.Parse(auxiliar[2]);
+            contador++; ///!!!!!
+            for(int i=0; i < totalRequests; i++)
+            {
+                string[] request = inputV[contador+i].Split(new char[0], StringSplitOptions.RemoveEmptyEntries);
+            }
             int totalCaches = Int32.Parse(auxiliar[3]);
             int cacheSize = Int32.Parse(auxiliar[4]);
 

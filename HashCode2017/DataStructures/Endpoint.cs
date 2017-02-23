@@ -9,10 +9,10 @@ namespace HashCode2017.DataStructures
     class Endpoint
     {
         //constructor
-        public Endpoint(int id, int l, int cch)
+        public Endpoint(int id, int latencia)
         {
             this.id = id;
-            latency = l;
+            latency = latencia;
 
             cache = new List<Cache>();
 
