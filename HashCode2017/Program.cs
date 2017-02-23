@@ -43,34 +43,38 @@ namespace HashCode2017
             int totalCaches = Int32.Parse(auxiliar[3]);
             int cacheSize = Int32.Parse(auxiliar[4]);
 
-            /*
             //Recorrer los endpoints y asignar videos a caches
-            for (int i=0; i < endpoints.length; i++)
+            for (int i=0; i < endpoints.Count(); i++)
             {
                 //Ordenar los request del usuario por campo prioridad
 
                 //Ordenar las caches del usuario
 
                 //para cada endpoint resolvemos los videos con las caches
-                for (int j=0; j < endpoint.request; j++)
+                for (int j=0; j < endpoints.ElementAt(i).request.Count(); j++)
                 {
-                    for(int z=0; z<endpoint.caches; z++)
-                    {
-                        if (cache.espaciodisponiblwe > espacioVideo)
-                        {
+                    Request r = endpoints.ElementAt(i).request.ElementAt(j);
 
+                    for (int z=0; z< endpoints.ElementAt(i).cache.Count(); z++)
+                    {
+                        if (endpoints.ElementAt(i).cache.ElementAt(z).remainSpace > r.videoSize)
+                        {
+                            endpoints.ElementAt(i).cache.ElementAt(z).videos.Add(videos.Find(x => x.id == r.videoID));
+                            endpoints.ElementAt(i).cache.ElementAt(z).remainSpace = endpoints.ElementAt(i).cache.ElementAt(z).remainSpace - r.videoSize;
                         }
                     }
                 }
-                
             }
-            */
 
+            for (int i = 0; i < endpoints.Count(); i++)
+            {
 
-            //Final: Escribir al fichero
-            /*
-            System.IO.File.WriteAllText(@"..\..\Output\me_at_the_zoo.out", slices.Count().ToString() + Environment.NewLine);
-            for (int i = 0; i < slices.Count(); i++)
+            }
+
+                //Final: Escribir al fichero
+
+                //System.IO.File.WriteAllText(@"..\..\Output\me_at_the_zoo.out", slices.Count().ToString() + Environment.NewLine);
+            /*for (int i = 0; i < slices.Count(); i++)
             {
                 string aux = slices.ElementAt(i).cornerUp.coordX.ToString() + " " +
                              slices.ElementAt(i).cornerUp.coordY.ToString() + " " +
