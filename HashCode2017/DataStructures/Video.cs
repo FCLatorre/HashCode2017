@@ -8,13 +8,15 @@ namespace HashCode2017.DataStructures
 {
     class Video
     {
-        public Video(int s)
+        public Video(int id, int size)
         {
-            size = s;
+            id = id;
+            size = size;
         }
 
         //atributes
         public double size;         //in megabytes
         public int[][] requests;
+        public int id;
     }
 }
