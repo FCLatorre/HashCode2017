@@ -43,6 +43,10 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="DataStructures\Cache.cs" />
+    <Compile Include="DataStructures\Endpoint.cs" />
+    <Compile Include="DataStructures\Request.cs" />
+    <Compile Include="DataStructures\Video.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
